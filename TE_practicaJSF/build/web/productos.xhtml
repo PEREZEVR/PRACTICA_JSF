@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h1>REGISTRO DE PRODUCTOS</h1>
+        <h:form>
+            <h:panelGrid columns="3" columnClasses="alinder, alinizq, alinizq" >
+                <h:outputLabel value="Producto:" for="producto" />
+                <h:inputText id="producto" label="Producto" required="true" value="#{productoManagedBean.producto}" />
+                <h:message for="existencia" />
+                
+                <h:outputLabel value="Categoria:" for="categoria" />
+                <h:selectOneMenu id="categoria" label="Categoria" value="#{productoManagedBean.categoria}">
+                    <f:selectItem  itemLabel="" itemValue="" />
+                    <f:selectItem  itemLabel="ESTRELLA" itemValue="ES" />
+                    <f:selectItem  itemLabel="NUEVOS" itemValue="NU" />
+                    <f:selectItem  itemLabel="TEMPORADA" itemValue="TEM" />
+                </h:selectOneMenu>
+                <h:message for="categoria" />
+                
+                <h:outputLabel value="Existencia:" for="existencia" />
+                <h:inputText id="existencia" label="Existencia" required="true" value="#{productoManagedBean.existencia}" />
+                <h:message for="existencia" />
+                
+                <h:outputLabel value="Precio:" for="precio" />
+                <h:inputText id="prcio" label="Precio" required="true" value="#{productoManagedBean.precio}" /> 
+                <h:message for="precio" />
+
+                <h:panelGroup />
+                <h:commandButton id="registro" value="Registro" action="confirmacion_productos" />
+            </h:panelGrid>
+        </h:form>
+            
+    </h:body>
+</html>
+
